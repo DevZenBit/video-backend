@@ -12,12 +12,14 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { MoviesModule } from './movies/movies.module';
 import { FilesModule } from './files/files.module';
+import { validate } from './validation/env.validation';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       load: [typeorm],
+      validate,
     }),
     TypeOrmModule.forRootAsync({
       inject: [ConfigService],
