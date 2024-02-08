@@ -16,15 +16,15 @@ export class User extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
-  @ApiProperty({ example: 'Mr', description: 'First name' })
+  @ApiProperty({ example: 'John', description: 'First name' })
   @Column({ type: 'varchar', name: 'firstName', nullable: true })
   firstName: string;
 
-  @ApiProperty({ example: 'Heisenberg', description: 'Last name' })
+  @ApiProperty({ example: 'Doe', description: 'Last name' })
   @Column({ type: 'varchar', name: 'lastName', nullable: true })
   lastName: string;
 
-  @ApiProperty({ example: 'userEmail@example.com', description: 'Email' })
+  @ApiProperty({ example: 'johndoe@example.com', description: 'Email' })
   @Column({ type: 'varchar', name: 'email', unique: true })
   email: string;
 
