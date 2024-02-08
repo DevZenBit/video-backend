@@ -7,9 +7,9 @@ export class GetMoviesRespDto {
     example: [
       {
         id: 1,
-        title: 'Inception',
-        publishingYear: 2010,
-        poster: 'inception.jpg',
+        title: 'The Lord of the Rings',
+        publishingYear: 2020,
+        poster: 'poster.jpg',
       },
     ],
   })

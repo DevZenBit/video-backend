@@ -4,8 +4,8 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import { LoginRespDto } from './dto/login-resp.dto';
 import { LoginReqDto } from './dto/login-req.dto';
-import { SignUpReqDto } from './dto/signUp-req.dto';
-import { SignUpRespDto } from './dto/signUp-resp.dto';
+import { SignUpReqDto } from './dto/sign-up-req.dto';
+import { SignUpRespDto } from './dto/sign-up-resp.dto';
 import { RefreshRespDto } from './dto/refresh-resp.dto';
 import { RefreshReqDto } from './dto/refresh-req.dto';
 

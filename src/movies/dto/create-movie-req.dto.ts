@@ -6,11 +6,11 @@ export class CreateMovieReqDto {
   @ApiProperty({ type: 'string', format: 'binary' })
   file: any;
 
-  @ApiProperty({ example: 'Star wars' })
+  @ApiProperty({ example: 'The Lord of the Rings' })
   @IsNotEmpty()
   title: string;
 
-  @ApiProperty({ example: 1977 })
+  @ApiProperty({ example: 2000 })
   @Type(() => Number)
   @IsNotEmpty()
   @IsInt()

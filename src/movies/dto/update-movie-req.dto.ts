@@ -6,7 +6,7 @@ export class UpdateMovieReqDto {
   @ApiProperty({ type: 'string', format: 'binary', required: false })
   file: any;
 
-  @ApiProperty({ example: 'Star wars', required: false })
+  @ApiProperty({ example: 'The Lord of the Rings', required: false })
   title: string;
 
   @ApiProperty({ example: 1977, required: false })

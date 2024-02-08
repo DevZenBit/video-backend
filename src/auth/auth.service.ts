@@ -10,7 +10,7 @@ import * as bcrypt from 'bcryptjs';
 import { UsersService } from 'src/users/users.service';
 import { User } from 'src/users/user.entity';
 
-import { SignUpReqDto } from './dto/signUp-req.dto';
+import { SignUpReqDto } from './dto/sign-up-req.dto';
 import { LoginReqDto } from './dto/login-req.dto';
 
 @Injectable()
