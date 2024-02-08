@@ -26,7 +26,6 @@ import { extname } from 'path';
 import { diskStorage } from 'multer';
 
 import { MoviesService } from 'src/movies/movies.service';
-import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 
 import { CreateMovieReqDto } from 'src/movies/dto/create-movie-req.dto';
 import { CreateMovieRespDto } from 'src/movies/dto/create-movie-resp.dto';
@@ -48,7 +47,6 @@ export class MoviesController {
   @ApiResponse({ status: 200, type: GetMoviesRespDto })
   @HttpCode(200)
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
   @Get()
   async getAllUsersMovies(
     @Request() req,
@@ -68,7 +66,6 @@ export class MoviesController {
   @ApiResponse({ status: 200, type: GetMovieByIdRespDto })
   @HttpCode(200)
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard)
   @Get('/:movieId')
   async getMovieById(
     @Param('movieId') movieId: number,
@@ -81,7 +78,7 @@ export class MoviesController {
   @ApiResponse({ status: 200, type: CreateMovieRespDto })
   @HttpCode(200)
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
+  @UseGuards(UserExistsGuard)
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(
     FileInterceptor('file', {
@@ -137,7 +134,7 @@ export class MoviesController {
   @ApiResponse({ status: 200, type: UpdateMovieRespDto })
   @HttpCode(200)
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
+  @UseGuards(UserExistsGuard)
   @ApiConsumes('multipart/form-data')
   @UseInterceptors(
     FileInterceptor('file', {
@@ -191,7 +188,7 @@ export class MoviesController {
   @ApiResponse({ status: 200, type: DeleteMovieRespDto })
   @HttpCode(200)
   @ApiBearerAuth()
-  @UseGuards(JwtAuthGuard, UserExistsGuard)
+  @UseGuards(UserExistsGuard)
   @Delete('/:movieId')
   async deleteMovie(
     @Param('movieId') movieId: number,
