@@ -26,7 +26,7 @@ import { extname } from 'path';
 import { diskStorage } from 'multer';
 
 import { MoviesService } from 'src/movies/movies.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
+import { JwtAuthGuard } from 'src/guards/jwt-auth.guard';
 
 import { CreateMovieReqDto } from 'src/movies/dto/create-movie-req.dto';
 import { CreateMovieRespDto } from 'src/movies/dto/create-movie-resp.dto';
