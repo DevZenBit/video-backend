@@ -5,8 +5,8 @@ import { join } from 'path';
 
 import { FilesService } from 'src/files/files.service';
 import { User } from 'src/users/user.entity';
-import { CreateMovieReqDto } from 'src/users/dto/createMovie-req.dto';
-import { UpdateMovieReqDto } from 'src/users/dto/updateMovie-req.dto';
+import { CreateMovieReqDto } from 'src/movies/dto/create-movie-req.dto';
+import { UpdateMovieReqDto } from 'src/movies/dto/update-movie-req.dto';
 
 import { Movie } from './movie.entity';
 

@@ -1,11 +1,13 @@
 import { Body, Controller, HttpCode, Post } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
+import { Public } from 'src/decorators/public.decorator';
+
 import { AuthService } from './auth.service';
 import { LoginRespDto } from './dto/login-resp.dto';
 import { LoginReqDto } from './dto/login-req.dto';
-import { SignUpReqDto } from './dto/signUp-req.dto';
-import { SignUpRespDto } from './dto/signUp-resp.dto';
+import { SignUpReqDto } from './dto/sign-up-req.dto';
+import { SignUpRespDto } from './dto/sign-up-resp.dto';
 import { RefreshRespDto } from './dto/refresh-resp.dto';
 import { RefreshReqDto } from './dto/refresh-req.dto';
 
@@ -16,6 +18,7 @@ export class AuthController {
 
   @ApiResponse({ status: 200, type: LoginRespDto })
   @HttpCode(200)
+  @Public()
   @Post('/sign-in')
   async login(@Body() userDto: LoginReqDto): Promise<LoginRespDto> {
     const { user, authToken, refreshToken } =
@@ -30,6 +33,7 @@ export class AuthController {
 
   @ApiResponse({ status: 200, type: SignUpRespDto })
   @HttpCode(200)
+  @Public()
   @Post('/sign-up')
   async registration(@Body() userDto: SignUpReqDto): Promise<SignUpRespDto> {
     const { success } = await this.authService.registration(userDto);

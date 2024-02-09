@@ -14,11 +14,11 @@ export class Movie extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ApiProperty({ example: 'Star wars' })
+  @ApiProperty({ example: 'The Lord of the Rings' })
   @Column({ type: 'varchar', length: 255 })
   title: string;
 
-  @ApiProperty({ example: 1977 })
+  @ApiProperty({ example: 2001 })
   @Column({ type: 'int', name: 'publishingYear' })
   publishingYear: number;
 
